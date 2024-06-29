@@ -18,6 +18,10 @@ const App = () => {
     <Routes>
       <Route element={<MasterLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route
+          path="/test"
+          element={<h1>Just bcz github ache, tar mane to eta na....</h1>}
+        />
 
         <Route path="/register" element={<RegistrationPage />} />
 
