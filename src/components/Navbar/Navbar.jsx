@@ -16,12 +16,13 @@ const Navbar = () => {
 
   return (
     <div
-      sx={{
-        height: "100%",
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-      }}
+      className="h-full w-full flex "
+      // sx={{
+      //   height: "100%",
+      //   width: "100%",
+      //   display: "flex",
+      //   alignItems: "center",
+      // }}
     >
       <div
         position="static"
