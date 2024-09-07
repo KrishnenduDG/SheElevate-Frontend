@@ -1,6 +1,6 @@
 import { GoogleSignInButton } from "@/components/shared";
 import { useAuth } from "@/hooks/useAuth";
-import { AppBar, Box, Button, Container, Typography } from "@mui/material";
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavbarProfile from "./NavbarProfile";
@@ -15,7 +15,7 @@ const Navbar = () => {
   } = useAuth();
 
   return (
-    <Box
+    <div
       sx={{
         height: "100%",
         width: "100%",
@@ -23,7 +23,7 @@ const Navbar = () => {
         alignItems: "center",
       }}
     >
-      <AppBar
+      <div
         position="static"
         sx={{
           p: 1.0,
@@ -34,13 +34,13 @@ const Navbar = () => {
           justifyContent: "center",
         }}
       >
-        <Box
+        <div
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
           width="100%"
         >
-          <Typography
+          <div
             variant="h6"
             noWrap
             component="a"
@@ -58,7 +58,7 @@ const Navbar = () => {
             <Link to="/" style={{ all: "unset" }}>
               SheElevate
             </Link>
-          </Typography>
+          </div>
 
           {!isAuthLoading ? (
             !googleUser ? (
@@ -67,9 +67,9 @@ const Navbar = () => {
               <NavbarProfile />
             )
           ) : null}
-        </Box>
-      </AppBar>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 };
 

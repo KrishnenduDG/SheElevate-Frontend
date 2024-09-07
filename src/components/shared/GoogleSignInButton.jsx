@@ -1,9 +1,8 @@
-import { Button, Typography } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
 
 const GoogleSignInButton = ({ onClick }) => {
   return (
-    <Button
+    <button
       sx={{
         display: "flex",
         alignItems: "center",
@@ -23,10 +22,10 @@ const GoogleSignInButton = ({ onClick }) => {
       onClick={onClick}
     >
       <FcGoogle size={22} style={{ marginRight: 8 }} />
-      <Typography fontWeight="bolder" textTransform={"none"}>
+      <div fontWeight="bolder" textTransform={"none"}>
         Login
-      </Typography>
-    </Button>
+      </div>
+    </button>
   );
 };
 
