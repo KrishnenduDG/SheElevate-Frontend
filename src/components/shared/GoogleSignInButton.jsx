@@ -3,28 +3,11 @@ import { FcGoogle } from "react-icons/fc";
 const GoogleSignInButton = ({ onClick }) => {
   return (
     <button
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#FFFFFF",
-        color: "#757575",
-        borderRadius: "4px",
-        boxShadow: "0 2px 4px 0 rgba(0,0,0,0.25)",
-        height: "36px",
-        padding: "0 16px",
-        cursor: "pointer",
-        transition: "background-color 0.3s, color 0.3s, box-shadow 0.3s",
-        "&:hover": {
-          backgroundColor: "#f1f1f1",
-        },
-      }}
+      className="flex items-center justify-center bg-white text-gray-500 rounded-md shadow-md h-9 px-4 cursor-pointer transition duration-300 hover:bg-gray-100"
       onClick={onClick}
     >
-      <FcGoogle size={22} style={{ marginRight: 8 }} />
-      <div fontWeight="bolder" textTransform={"none"}>
-        Login
-      </div>
+      <FcGoogle className="mr-[8]" size={22} />
+      <div className="font-bolder transform-none">Login</div>
     </button>
   );
 };

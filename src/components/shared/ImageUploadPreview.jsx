@@ -21,8 +21,9 @@ function ImageUploadComponent({ images, setImages }) {
           accept="image/*"
           multiple
           onChange={handleImageUpload}
-          style={{ display: "none" }}
+          class="hidden"
         />
+
         <IconButton
           component="span"
           sx={{

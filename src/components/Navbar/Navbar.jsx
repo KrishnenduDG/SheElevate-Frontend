@@ -15,19 +15,29 @@ const Navbar = () => {
   } = useAuth();
 
   return (
-    //bg-[#0c0526]
-    <div className="h-full w-full flex bg-[#463581]">
-      <div className="p-4 bg-[#0c0526] h-full flex flex-col justify-center">
-        <div className="flex justify-center items-center w-full">
-          <div className="hidden md:flex font-mono font-bold tracking-widest">
-            <Link
-              to="/"
-              className="text-inherit no-underline flex-grow text-white"
-            >
-              SheElevate
-            </Link>
-          </div>
+    <div className="h-full w-full flex bg-[#0c0526]">
+      {/* Container for SheElevate */}
+      <div className="flex flex-row justify-between w-full items-center">
+        {/* SheElevate on the left */}
+        <div className="font-mono font-bold tracking-widest text-white">
+          <Link to="/" className="text-inherit no-underline">
+            SheElevate
+          </Link>
+        </div>
 
+        {/* Navigation links on the right */}
+        <ul className="flex flex-row gap-8 items-center text-white">
+          <li className="hidden sm:inline p-5 mr-4 hover:bg-[#99ddff] hover:text-black font-semibold">
+            <a href="#">Home</a>
+          </li>
+          <li className="hidden sm:inline p-5 mr-4 hover:bg-[#99ddff] hover:text-black font-semibold">
+            <a href="#Details">About</a>
+          </li>
+          <li className="hidden sm:inline p-5 mr-4 hover:bg-[#99ddff] hover:text-black font-semibold">
+            <a href="#contact">Contact Us</a>
+          </li>
+
+          {/* Google Sign In Button */}
           {!isAuthLoading ? (
             !googleUser ? (
               <GoogleSignInButton onClick={handleGoogleSignIn} />
@@ -35,68 +45,9 @@ const Navbar = () => {
               <NavbarProfile />
             )
           ) : null}
-        </div>
+        </ul>
       </div>
     </div>
   );
 };
-//   <div
-//     className="h-full w-full flex "
-//     // sx={{
-//     //   height: "100%",
-//     //   width: "100%",
-//     //   display: "flex",
-//     //   alignItems: "center",
-//     // }}
-//   >
-//     <div
-//       position="static"
-//       sx={{
-//         p: 1.0,
-//         background: "#0c0526",
-//         height: "100%",
-//         display: "flex",
-//         flexDirection: "column",
-//         justifyContent: "center",
-//       }}
-//     >
-//       <div
-//         display={"flex"}
-//         justifyContent={"center"}
-//         alignItems={"center"}
-//         width="100%"
-//       >
-//         <div
-//           variant="h6"
-//           noWrap
-//           component="a"
-//           href="/"
-//           sx={{
-//             display: { xs: "none", md: "flex" },
-//             fontFamily: "monospace",
-//             fontWeight: 700,
-//             letterSpacing: ".3rem",
-//             color: "inherit",
-//             textDecoration: "none",
-//             flexGrow: 1,
-//           }}
-//         >
-//           <Link to="/" style={{ all: "unset" }}>
-//             SheElevate
-//           </Link>
-//         </div>
-
-//         {!isAuthLoading ? (
-//           !googleUser ? (
-//             <GoogleSignInButton onClick={handleGoogleSignIn} />
-//           ) : (
-//             <NavbarProfile />
-//           )
-//         ) : null}
-//       </div>
-//     </div>
-//   </div>
-// );
-//};
-
 export default Navbar;
