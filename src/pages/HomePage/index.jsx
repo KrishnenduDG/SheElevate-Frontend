@@ -1,12 +1,12 @@
 import { userLabel } from "@/constants";
 import { useAuth } from "@/hooks/useAuth";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ReactTyped } from "react-typed";
 
 const HomePage = () => {
   const { isAuthLoading, registeredEntity } = useAuth();
-
+  const [aboutText, setAboutText] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const HomePage = () => {
         />
       </div>
       <div className="bg-white">
-        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+        <div class="absolute bottom-0 left-0 w-full  leading-none rotate-180">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 120"
@@ -58,6 +58,7 @@ const HomePage = () => {
               className="fill-white"
             ></path>
           </svg>
+          <div className="bg-green">Hello</div>
         </div>
       </div>
     </div>
