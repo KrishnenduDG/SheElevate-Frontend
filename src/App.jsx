@@ -1,5 +1,6 @@
 import { businessLabel, userLabel } from "@/constants";
 import { MasterLayout } from "@/layouts";
+import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 import {
   BusinessHomePage,
   BusinessProfilePage,
@@ -15,42 +16,51 @@ import UserProfilePage from "./pages/UserProfilePage";
 
 const App = () => {
   return (
-    <Routes>
-      <Route element={<MasterLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/test"
-          element={<h1>Just bcz github ache, tar mane to eta na....</h1>}
-        />
+    <>
+      <ScrollToHashElement behavior="smooth" />
+      <Routes>
+        <Route element={<MasterLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/test"
+            element={<h1>Just bcz github ache, tar mane to eta na....</h1>}
+          />
 
-        <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/register" element={<RegistrationPage />} />
 
-        <Route path={`${businessLabel}/`} element={<BusinessHomePage />} />
-        <Route
-          path={`${businessLabel}/:username`}
-          element={<BusinessProfilePage />}
-        />
+          <Route path={`${businessLabel}/`} element={<BusinessHomePage />} />
+          <Route
+            path={`${businessLabel}/:username`}
+            element={<BusinessProfilePage />}
+          />
 
-        <Route path={`${userLabel}/:username`} element={<UserProfilePage />} />
+          <Route
+            path={`${userLabel}/:username`}
+            element={<UserProfilePage />}
+          />
 
-        <Route
-          path={`${businessLabel}/register`}
-          element={<BusinessRegistrationForm />}
-        />
+          <Route
+            path={`${businessLabel}/register`}
+            element={<BusinessRegistrationForm />}
+          />
 
-        <Route
-          path={`${userLabel}/register`}
-          element={<UserRegistrationForm />}
-        />
+          <Route
+            path={`${userLabel}/register`}
+            element={<UserRegistrationForm />}
+          />
 
-        <Route path={`workspace/create`} element={<WorkspaceCreationForm />} />
-        <Route
-          path={`workspace/:username/:workspaceName`}
-          element={<WorkspaceDetailsPage />}
-        />
-        <Route path="/contact-us" element={<h1>Contact Us</h1>} />
-      </Route>
-    </Routes>
+          <Route
+            path={`workspace/create`}
+            element={<WorkspaceCreationForm />}
+          />
+          <Route
+            path={`workspace/:username/:workspaceName`}
+            element={<WorkspaceDetailsPage />}
+          />
+          <Route path="/contact-us" element={<h1>Contact Us</h1>} />
+        </Route>
+      </Routes>
+    </>
   );
 };
 
