@@ -62,7 +62,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div id="about" className="h-40 bg-red-600">
+      <div id="about" className="h-40 bg-[#fff6ed] ">
         about
       </div>
       <div id="contact" className="h-40 bg-green-600">
