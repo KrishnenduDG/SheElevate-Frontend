@@ -3,10 +3,10 @@ import { useAuth } from "@/hooks/useAuth";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ReactTyped } from "react-typed";
-
+import Navbar from "@/components/Navbar/Navbar";
 const HomePage = () => {
   const { isAuthLoading, registeredEntity } = useAuth();
-  const [aboutText, setAboutText] = useState("");
+  //const [aboutText, setAboutText] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,34 +19,35 @@ const HomePage = () => {
   }, [isAuthLoading]);
 
   return (
-    <div>
-      <div className="flex py-6">
-        <h1 className=" text-white font-serif text-3xl mt-0 z-1 leading leading-relaxed text-center capitalize py-5 text-wrap">
-          Each time a woman stands up for herself,
-          <br /> without knowing it possibly,
-          <br /> without claiming it,
-          <br />
-          she stands up for all women.
-          <br />
-          <h2 className="text-2xl"> -Maya Angelou</h2>
-        </h1>
-      </div>
-      <div className="flex justify-center items-center gap-2">
-        <p className="text-2xl text-white">A platform to </p>
-        <ReactTyped
-          strings={[
-            "Showcase your art ...",
-            "Connect to investors...",
-            "uphold craftsmenship...",
-          ]}
-          typeSpeed={40}
-          backSpeed={50}
-          loop
-          className="text-2xl font-bold text-[#99ddff]"
-        />
-      </div>
-      <div className="bg-white">
-        <div class="absolute bottom-0 left-0 w-full  leading-none rotate-180">
+    <>
+      <div className="bg-gradient-to-r from-violet-950 to-black ">
+        <div className="flex py-6 ">
+          <h1 className=" text-white font-serif text-3xl mt-0 z-1 leading leading-relaxed text-center capitalize py-5 text-wrap">
+            Each time a woman stands up for herself,
+            <br /> without knowing it possibly,
+            <br /> without claiming it,
+            <br />
+            she stands up for all women.
+            <br />
+            <h2 className="text-2xl"> -Maya Angelou</h2>
+          </h1>
+        </div>
+        <div className="flex justify-center items-center gap-2">
+          <p className="text-2xl text-white">A platform to </p>
+          <ReactTyped
+            strings={[
+              "Showcase your art ...",
+              "Connect to investors...",
+              "uphold craftsmenship...",
+            ]}
+            typeSpeed={40}
+            backSpeed={50}
+            loop
+            className="text-2xl font-bold text-[#99ddff]"
+          />
+        </div>
+
+        <div class=" mt-24 w-full  leading-none rotate-180">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 120"
@@ -58,10 +59,17 @@ const HomePage = () => {
               className="fill-white"
             ></path>
           </svg>
-          <div className="bg-green">Hello</div>
         </div>
       </div>
-    </div>
+
+      <div id="about" className="h-40 bg-red-600">
+        about
+      </div>
+      <div id="contact" className="h-40 bg-green-600">
+        contact
+      </div>
+      <div className="h-[1200px]">hello</div>
+    </>
   );
 };
 

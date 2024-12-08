@@ -38,19 +38,13 @@ const Navbar = () => {
           </li> */}
         <ul className="flex flex-row gap-8 items-center text-white">
           <li className="hidden sm:inline p-5 mr-4 hover:bg-[#99ddff] hover:text-black font-semibold">
-            <Link to="/home" smooth={true} duration={500}>
-              Home
-            </Link>
+            <Link to="#">Home</Link>
           </li>
           <li className="hidden sm:inline p-5 mr-4 hover:bg-[#99ddff] hover:text-black font-semibold">
-            <Link to="/details" smooth={true} duration={500}>
-              About
-            </Link>
+            <Link to="#about">About</Link>
           </li>
           <li className="hidden sm:inline p-5 mr-4 hover:bg-[#99ddff] hover:text-black font-semibold">
-            <Link to="/contact" smooth={true} duration={500}>
-              Contact Us
-            </Link>
+            <Link to="#contact">Contact Us</Link>
           </li>
 
           {/* Google Sign In Button */}

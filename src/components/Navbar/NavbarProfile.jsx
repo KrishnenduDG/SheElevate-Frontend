@@ -124,11 +124,11 @@ const NavbarProfile = () => {
         )}
 
         <div
-          class="py-2 px-4 cursor-pointer hover:bg-gray-200"
+          class="py-2 px-4 cursor-pointer bg-blue-400 hover:bg-blue-200 text-black"
           key={"Sign Out"}
           onClick={handleSignOut}
         >
-          <span class="text-center block">Sign Out</span>
+          <span class="text-center block ">Sign Out</span>
         </div>
       </div>
     </div>
