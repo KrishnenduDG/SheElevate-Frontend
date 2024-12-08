@@ -4,10 +4,26 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ReactTyped } from "react-typed";
 import Navbar from "@/components/Navbar/Navbar";
+
 const HomePage = () => {
   const { isAuthLoading, registeredEntity } = useAuth();
-  //const [aboutText, setAboutText] = useState("");
   const navigate = useNavigate();
+
+  const images = [
+    "/src/Pages/Images/Image1.jpeg",
+    "/src/Pages/Images/Image2.jpeg",
+    "/src/Pages/Images/Image3.jpeg",
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Reduce image sliding speed to 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change every 3 seconds
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   useEffect(() => {
     if (isAuthLoading) return;
@@ -20,9 +36,9 @@ const HomePage = () => {
 
   return (
     <>
-      <div className="bg-gradient-to-r from-violet-950 to-black ">
-        <div className="flex py-6 ">
-          <h1 className=" text-white font-serif text-3xl mt-0 z-1 leading leading-relaxed text-center capitalize py-5 text-wrap">
+      <div className="bg-gradient-to-r from-violet-950 to-black relative">
+        <div className="flex py-6">
+          <h1 className="text-white font-serif text-3xl mt-12 z-0 leading leading-relaxed text-center capitalize py-5 text-wrap">
             Each time a woman stands up for herself,
             <br /> without knowing it possibly,
             <br /> without claiming it,
@@ -38,7 +54,7 @@ const HomePage = () => {
             strings={[
               "Showcase your art ...",
               "Connect to investors...",
-              "uphold craftsmenship...",
+              "Uphold craftsmanship...",
             ]}
             typeSpeed={40}
             backSpeed={50}
@@ -47,12 +63,21 @@ const HomePage = () => {
           />
         </div>
 
-        <div class=" mt-24 w-full  leading-none rotate-180">
+        {/* Sliding Picture Animation */}
+        <div className="absolute top-20 right-20 w-80 h-80">
+          <img
+            src={images[currentImageIndex]}
+            alt="Sliding Animation"
+            className="w-full h-full object-cover rounded-lg shadow-lg"
+          />
+        </div>
+
+        <div className="mt-24 w-full leading-none rotate-180">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1200 120"
             preserveAspectRatio="none"
-            className="relative block width: calc(130% + 1.3px); height: 223px"
+            className="relative block w-full h-24"
           >
             <path
               d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
@@ -62,13 +87,56 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div id="about" className="h-40 bg-[#fff6ed] ">
-        about
+      {/* About Us Section */}
+      <div id="about" className="py-20 bg-gray-100">
+        <div className="container mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-4xl font-bold text-violet-900 mb-6">About Us</h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            She Elevate is a platform dedicated to empowering skilled women in
+            rural areas by connecting them with local business owners and shop
+            keepers. Through this initiative, we aim to bridge the gap between
+            talent and opportunity, fostering creativity and economic growth. By
+            enabling women to showcase their crafts and skills, we contribute to
+            building a sustainable and inclusive society.
+          </p>
+        </div>
       </div>
-      <div id="contact" className="h-40 bg-green-600">
-        contact
+
+      {/* Contact Us Section */}
+      <div id="contact" className="py-20 bg-violet-950 text-white">
+        <div className="container mx-auto px-6 md:px-12 text-center">
+          <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
+          <p className="text-lg text-gray-300 mb-8">
+            Have any questions or need assistance? We're here to help. Reach out
+            to us, and we’ll get back to you promptly!
+          </p>
+          <form className="max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-700 focus:outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-700 focus:outline-none"
+              />
+            </div>
+            <textarea
+              placeholder="Your Message"
+              rows="5"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 text-gray-700 focus:outline-none mb-4"
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-violet-800 hover:bg-violet-900 text-white py-3 px-8 rounded-lg text-lg font-bold transition duration-300"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
-      <div className="h-[1200px]">hello</div>
     </>
   );
 };
