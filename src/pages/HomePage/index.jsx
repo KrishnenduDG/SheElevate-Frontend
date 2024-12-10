@@ -103,7 +103,22 @@ const HomePage = () => {
       </div>
 
       {/* Contact Us Section */}
-      <div id="contact" className="py-20 bg-violet-950 text-white">
+      <div
+        id="contact"
+        className="py-20  pt-0 bg-gradient-to-r from-violet-950 to-black relative text-white"
+      >
+        <svg
+          viewBox="0 0 1440 320"
+          //version="1.1"
+          //id="svg1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#ffffff"
+            d="M 0 0 L 0 160 L 30 176 C 60 192 120 223.99922 180 234.69922 C 240 244.99922 300 235.00078 360 213.30078 C 420 192.00078 480 160 540 176 C 600 192 660 256.00078 720 245.30078 C 780 235.00078 840 148.99922 900 106.69922 C 960 63.999219 1020 64.000781 1080 85.300781 C 1140 107.00078 1200 149.00078 1260 181.30078 C 1320 213.00078 1380 235.00078 1410 245.30078 L 1440 256 L 1440 0 L 0 0 z "
+          />
+        </svg>
+
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
           <p className="text-lg text-gray-300 mb-8">
