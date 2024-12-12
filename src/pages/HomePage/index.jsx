@@ -88,7 +88,7 @@ const HomePage = () => {
       </div>
 
       {/* About Us Section */}
-      <div id="about" className="py-20">
+      <div id="about" className="py-20 ">
         <div className="container mx-auto px-6 md:px-12 text-center">
           <h2 className="text-5xl font-bold text-violet-900 mb-6">About Us</h2>
           <p className="text-2xl text-gray-700 leading-relaxed">
