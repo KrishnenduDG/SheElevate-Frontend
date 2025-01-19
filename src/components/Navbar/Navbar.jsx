@@ -54,7 +54,9 @@ const Navbar = () => {
             ) : (
               <NavbarProfile />
             )
-          ) : null}
+          ) : (
+            <h1>Loading</h1>
+          )}
         </ul>
       </div>
     </div>
